@@ -1279,7 +1279,7 @@ function openDb() {
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at top left,rgba(15,118,110,.12),transparent 36%),linear-gradient(180deg,var(--bg),var(--bg2) 60%,#fff);color:var(--ink);font-family:"SUIT Variable","Pretendard","Apple SD Gothic Neo","Noto Sans KR",sans-serif}body{min-height:100svh}button,input,select{font:inherit}button{min-height:48px;border:0;border-radius:14px;cursor:pointer}input,select{width:100%;min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fffffff0;color:var(--ink)}
 .app{min-height:100svh;padding-top:env(safe-area-inset-top)}header{position:sticky;top:0;z-index:20;padding:16px 18px 14px;background:#0f766eeb;color:#fff;backdrop-filter:blur(14px);box-shadow:0 12px 28px rgba(8,49,45,.16)}header h1{margin:0;font-size:20px;font-weight:800;letter-spacing:-.02em}header p{margin:4px 0 0;font-size:13px;color:#ffffffd6}.content{width:min(815px,100%);margin:0 auto;padding:18px 16px calc(96px + var(--nav));max-height:1346px;overflow-y:auto}
 .panel{display:none;gap:14px}.panel.active{display:grid}.card{padding:18px;background:var(--card);border:1px solid #ffffffd0;border-radius:24px;box-shadow:var(--shadow)}.card h2,.card h3{margin:0 0 14px;font-size:18px;letter-spacing:-.02em}.meta{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;color:var(--muted)}
-.grid2,.grid4,.stats2{display:grid;gap:12px}.grid2,.stats2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.field{display:grid;gap:8px}.field label,.field .label{font-size:14px;font-weight:700}.readonly{background:#f2f7f8}.choices{display:grid;gap:10px}.choices.two{grid-template-columns:repeat(2,minmax(0,1fr))}.choices.three{grid-template-columns:repeat(3,minmax(0,1fr))}.choices.moment{grid-template-columns:repeat(2,minmax(0,1fr))}.choices.moment label:nth-child(5){grid-column:1/-1}.choice{position:relative;display:block}.choice input{position:absolute;opacity:0;pointer-events:none}.choice span{display:grid;align-items:center;min-height:56px;padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:#fffffff5;text-align:center;line-height:1.35;font-weight:700}.choice input:checked+span{border-color:var(--brand);background:linear-gradient(180deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 12px 24px rgba(15,118,110,.22)}
+.grid2,.grid4,.stats2{display:grid;gap:12px}.grid2,.stats2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.field{display:grid;gap:8px}.field label,.field .label{font-size:14px;font-weight:700}.readonly{background:#f2f7f8}.choices{display:grid;gap:10px}.choices.two{grid-template-columns:repeat(2,minmax(0,1fr))}.choices.three{grid-template-columns:repeat(3,minmax(0,1fr))}.choices.moment{grid-template-columns:repeat(2,minmax(0,1fr))}.choices.moment label:nth-child(5){grid-column:1/-1}.choice{position:relative;display:block}.choice input{position:absolute;opacity:0;pointer-events:none}.choice span{display:grid;align-items:center;min-height:56px;padding:12px 14px;border:1px solid var(--line);border-radius:18px;background:#fffffff5;text-align:center;line-height:1.35;font-weight:700}.choice input:checked+span{border-color:var(--brand);background:linear-gradient(180deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 12px 24px rgba(15,118,110,.22)}
 .row{display:flex;flex-wrap:wrap;gap:10px}.primary{background:linear-gradient(180deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 10px 24px rgba(15,118,110,.22)}.secondary{background:var(--soft);color:var(--brand2)}.ghost{background:#fffffff0;color:var(--ink);border:1px solid var(--line)}.danger{background:#b423181f;color:var(--danger)}.msg{min-height:22px;margin-top:10px;font-size:14px}.info{color:var(--muted)}.success{color:var(--brand2)}.warning{color:var(--warn)}.error{color:var(--danger)}
 .summary{padding:16px;border-radius:20px;background:linear-gradient(180deg,#fffffff5,#f4fafaf5);border:1px solid rgba(15,118,110,.12)}.summary b{display:block;margin-top:8px;font-size:28px;letter-spacing:-.03em}.chart,.table{overflow:auto}.chart svg{display:block;width:100%;height:auto}table{width:100%;border-collapse:collapse}th,td{padding:11px 0;border-bottom:1px solid var(--line);text-align:left;font-size:14px}th{color:var(--muted);font-weight:700}td.rate{font-weight:800;color:var(--brand2)}
 .records{display:grid;gap:10px}.record{display:flex;justify-content:space-between;gap:12px;padding:16px;border-radius:20px;background:#fffffff5;border:1px solid rgba(15,118,110,.08)}.record strong{letter-spacing:-.02em}.record p{margin:6px 0 0;font-size:14px;color:var(--muted);line-height:1.5}.actions{display:flex;flex-direction:column;gap:8px;min-width:96px}.actions button{min-height:44px;padding:10px 12px}.empty{padding:18px;border-radius:20px;background:#ffffffb3;color:var(--muted);text-align:center}
@@ -1297,21 +1297,19 @@ nav{position:fixed;left:14px;right:14px;bottom:var(--nav);z-index:25;display:gri
     <section class="panel active" data-tab="input">
       <div class="card">
         <h2>입력</h2>
+        <div class="meta">
+          <span>고정 관찰자: 정혜윤</span>
+          <span>저장 순서: validation → local save → stats update → google backup trigger → 파일 준비</span>
+        </div>
         <form id="recordForm" novalidate>
           <input type="hidden" id="editId">
-          <div class="grid3" style="margin-top:14px">
-            <div>
-              <div class="field"><label for="observerInput">관찰자</label><input id="observerInput" class="readonly" type="text" value="정혜윤" readonly></div>
-              <div class="field"><label for="dateInput">날짜</label><input id="dateInput" type="date" required></div>
-            </div>
-            <div>
-              <div class="field"><label for="startInput">관찰 시작</label><input id="startInput" type="time" required></div>
-              <div class="field"><label for="endInput">관찰 종료</label><input id="endInput" type="time" required></div>
-            </div>
-            <div>
-              <div class="field"><label for="jobSelect">직종</label><select id="jobSelect" required></select></div>
-              <div class="field"><label for="locationSelect">장소</label><select id="locationSelect" required></select></div>
-            </div>
+          <div class="grid2" style="margin-top:14px">
+            <div class="field"><label for="dateInput">날짜</label><input id="dateInput" type="date" required></div>
+            <div class="field"><label for="observerInput">관찰자</label><input id="observerInput" class="readonly" type="text" value="정혜윤" readonly></div>
+            <div class="field"><label for="startInput">시작 시간</label><input id="startInput" type="time" required></div>
+            <div class="field"><label for="endInput">종료 시간</label><input id="endInput" type="time" required></div>
+            <div class="field"><label for="jobSelect">직종</label><select id="jobSelect" required></select></div>
+            <div class="field"><label for="locationSelect">장소</label><select id="locationSelect" required></select></div>
           </div>
           <div class="field" style="margin-top:14px"><div class="label">행위</div><div class="choices moment" id="momentChoices"></div></div>
           <div class="field" style="margin-top:14px"><div class="label">수행값</div><div class="choices three" id="actionChoices"></div></div>
@@ -1400,8 +1398,8 @@ const RECORD_KEYS = ["id", "date", "startTime", "endTime", "observer", "job", "l
 const PAIR_KEYS = ["code", "label"];
 const PDF_SIZE = { width: 595.28, height: 841.89 };
 const JOBS = [
-  { code: "2", label: "간호사", pdf: "Nurse" },
   { code: "11", label: "의사", pdf: "Doctor" },
+  { code: "2", label: "간호사", pdf: "Nurse" },
   { code: "31", label: "임상병리사", pdf: "Clinical Lab" },
   { code: "32", label: "물리치료사", pdf: "Physical Therapist" },
   { code: "33", label: "방사선사", pdf: "Radiologic Technologist" },
@@ -1429,8 +1427,8 @@ const ACTIONS = [
   { code: "3", label: "미수행" }
 ];
 const GLOVES = [
-  { code: "2", label: "미착용" },
-  { code: "1", label: "착용" }
+  { code: "1", label: "착용" },
+  { code: "2", label: "미착용" }
 ];
 const HEADERS = [
   "증례코드","관찰구분","관찰자","관찰일[년월일]","관찰시작[시]","관찰시작[분]","관찰종료[시]","관찰종료[분]",
@@ -1853,11 +1851,10 @@ function fillSelect(select, items, placeholder) {
 
 function fillChoices(container, name, items) {
   container.innerHTML = "";
-  items.forEach((item, index) => {
+  items.forEach((item) => {
     const label = document.createElement("label");
     label.className = "choice";
-    const checked = name === "glove" && index === 0 ? " checked" : "";
-    label.innerHTML = '<input type="radio" name="' + name + '" value="' + item.code + '"' + checked + '><span>' + escapeHtml(item.label) + "</span>";
+    label.innerHTML = '<input type="radio" name="' + name + '" value="' + item.code + '"><span>' + escapeHtml(item.label) + "</span>";
     container.appendChild(label);
   });
 }
@@ -1942,16 +1939,7 @@ async function handleSubmit() {
     return;
   }
   const backupResult = await googleBackup("save");
-  if (!editing) {
-    clearCheckedValue("moment");
-    clearCheckedValue("action");
-    clearCheckedValue("glove");
-  }
-  S.editId = "";
-  D.editId.value = "";
-  D.saveBtn.textContent = "저장";
-  D.cancelBtn.classList.add("hidden");
-  clearFormMessage();
+  resetForm();
   formMessage(editing ? "수정이 완료되었습니다." : "저장이 완료되었습니다.", "success");
   if (!backupResult.ok) {
     status(backupResult.message, "warning");
@@ -1974,8 +1962,8 @@ function buildDraftRecord() {
   return {
     id: existing ? existing.id : createUuid(),
     date: D.dateInput.value.replaceAll("-", ""),
-    startTime: existing ? existing.startTime : timeNow(),
-    endTime: existing ? existing.endTime : timeNow(),
+    startTime: D.startInput.value,
+    endTime: D.endInput.value,
     observer: OBSERVER,
     job: { code: String(job.code || ""), label: String(job.label || "") },
     location: { code: String(location.code || ""), label: String(location.label || "") },
@@ -2373,7 +2361,7 @@ function formatKonisTimePart(value) {
 }
 
 function konisActionValue(action) {
-  return action;
+  return action === "1" || action === "2" ? "1.0" : "";
 }
 
 function base64ToBytes(value) {
@@ -2598,7 +2586,6 @@ function monthCode(value) { return (value || monthNow()).replace("-", ""); }
 function monthLabel(value) { const code = monthCode(value); return code.slice(0, 4) + "." + code.slice(4, 6); }
 function monthNow() { const today = new Date(); return today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0"); }
 function todayValue() { const today = new Date(); return today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0"); }
-function timeNow() { const now = new Date(); return String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0"); }
 function formatDate(value) { return value.slice(0, 4) + "-" + value.slice(4, 6) + "-" + value.slice(6, 8); }
 function packPair(value) { return JSON.stringify({ code: String(value.code), label: String(value.label) }); }
 function unpackPair(value) { return safeParse(value, { code: "", label: "" }); }
